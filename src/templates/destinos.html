@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}Valoraciones{% endblock %}
+
+{% block content %}
+<h2>Destinos y su valoración media</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Destino</th>
+            <th>Valoración Media</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for destino, media in valoraciones.items() %}
+        <tr>
+            <td>{{ destino }}</td>
+            <td>{{ "%.2f"|format(media) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
